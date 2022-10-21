@@ -19,6 +19,17 @@ class EnvConfig:
     theta_max = math.pi / 4  # Maximal azimuth angle (rad)
     kappa = 1e-26  # Effective capacitance coefficient
     sigma_square = 1e-6  # Background noise power (W)
+    x_max, y_max = 400, 400  # Maximum side lengths of rectangular area (m)
+    tau = 1  # Time slot (s)
+    T = 300  # Number of time slots
+    alpha = 5  # Input data size of a computation task (MB)
+    beta = 1e9  # Number of CPU cycles required to execute the task
+    zetas_candidate = [0.3, 0.5, 0.7]  # candidate parameters of Bernoulli random variables
+    A0 = 3.04  #
+    B9 = -23.29
+    theta0 = -3.61
+    C0 = 4.14
+    eta0 = 20.7
 
 class RLConfig:
     G_max = 100  # Number of maximum evolution generations
