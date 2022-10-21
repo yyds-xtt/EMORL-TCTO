@@ -15,7 +15,7 @@ class EnvConfig:
     v0 = 4.03  # Mean rotor induced velocity in hover
     v_max = 30  # Maximum flying velocity of the UAV (m/s)
     W = 10  # Channel bandwidth (MHz)
-    rho = 1.225  # Air density (km/m3)
+    rho = 1.225  # Air density (kg/m3)
     theta_max = math.pi / 4  # Maximal azimuth angle (rad)
     kappa = 1e-26  # Effective capacitance coefficient
     sigma_square = 1e-6  # Background noise power (W)
@@ -25,11 +25,17 @@ class EnvConfig:
     alpha = 5  # Input data size of a computation task (MB)
     beta = 1e9  # Number of CPU cycles required to execute the task
     zetas_candidate = [0.3, 0.5, 0.7]  # candidate parameters of Bernoulli random variables
-    A0 = 3.04  #
+
+    # Path loss parameters
+    A0 = 3.04
     B9 = -23.29
     theta0 = -3.61
     C0 = 4.14
     eta0 = 20.7
+
+    K = 60  # Number of SDs
+    H = 30  # Number of flying altitude (m)
+
 
 class RLConfig:
     G_max = 100  # Number of maximum evolution generations
@@ -41,3 +47,6 @@ class RLConfig:
     n_warm = 60  # Number of warm-up iterations
     n_evo = 10  # Number of task iterations
     delta = 4  # Number of divisions of weight vectors
+    n = 15
+
+    learning_rate = 0.0001
